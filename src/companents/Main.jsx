@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom'
 import {YinYang} from './Svgs'
 
 
+
 //Main Container
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -37,6 +38,7 @@ position: absolute;
 top: 2rem;
 right: calc(1rem + 2vw);
 text-decoration: none;
+font-weight:bold;
 z-index: 1;
 `
 //Blog
@@ -44,6 +46,7 @@ const Blog = styled(Link)`
 color: ${props=>props.theme.text};
 position: absolute;
 top: 50%;
+font-weight:bold;
 right: calc(1rem + 2vw);
 transform:translate(-50%, -50%);
 transform:rotate(90deg);
@@ -52,10 +55,11 @@ z-index: 1;
 `
 //Work
 const Work = styled(Link)`
-color: ${props=>props.theme.text};
+color: ${props=>props.click ? props.theme.body: props.theme.text};
 position: absolute;
 top: 50%;
 left: 1rem;
+font-weight:bold;
 transform:translate(-50%, -50%);
 transform:rotate(-90deg);
 text-decoration: none;
@@ -74,15 +78,17 @@ justify-content: space-evenly;
 `
 //About
 const About = styled(Link)`
-color: ${props=>props.theme.text};
+color: ${props=>props.click ? props.theme.body: props.theme.text};
 text-decoration: none;
 z-index: 1;
+font-weight:700;
 `
 //Skills
 const Skills= styled(Link)`
 color: ${props=>props.theme.text};
 text-decoration: none;
 z-index: 1;
+font-weight:700;
 `
 
 
@@ -121,6 +127,18 @@ align-items:center;
 }
 `
 
+// main dark side
+const DarkMood = styled.div`
+position:absolute;
+background:black;
+top: 0;
+bottom: 0;
+right: 50%;
+width: ${props=>props.click? '50%' : '0'};
+height: ${props=>props.click? '100%' : '0'};
+transition: height 0.5s ease, width 1s ease 0.5s;
+z-index: 1;
+`
 
 
 const Main = () => {
@@ -131,12 +149,14 @@ const Main = () => {
   }
   return (
     <MainContainer>
+       <DarkMood click={click}/>
       <Container>
         <Button/>
         <Logo/>
-        <Social/>
+        <Social theme ={click? 'dark' : 'light'} />
+       
         <Center click={click}>
-          <YinYang onClick={()=>clickButton()} width={click? 150 : 200}  height={click? 150 :200} fill='currentColor'/>
+           <YinYang onClick={()=>clickButton()} width={click? 150 : 200}  height={click? 150 :200} fill='currentColor'/> 
           <span>Click Here</span>
         </Center>
         <Contact target="_blank" to={{pathname:"mailto:aydansamedva@gmail.com"}}>
@@ -149,13 +169,13 @@ const Main = () => {
             Blog
           </h3>
         </Blog>
-        <Work  to='/works'>
+        <Work  to='/works'  click={click}>
           <h3>
             Works
           </h3>
         </Work>
         <BottomBar >
-          <About to='/about'>
+          <About to='/about' click={click}>
           <h3>
            About.
           </h3>

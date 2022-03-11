@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Github, Facebook } from "../companents/Svgs";
 import LinkedinPng from "../assets/svg/icons8-linkedin-50.png";
 import MediumPng from "../assets/svg/icons8-medium-monogram-50.png";
+import {Dark, DarkTheme} from "../companents/DarkMood"
 
 const Icon = styled.div`
   display: flex;
@@ -25,13 +26,13 @@ const Line = styled.span`
   height: 6rem;
   background-color: ${props => props.theme.text};
 `;
-const Social = () => {
+const Social = (props) => {
   return (
  
       <Icon>
        
-          <Link to={{pathname:"https://github.com/aydansamedova"}}  target='_blank' style={{color:"black"}}>
-            <Github width={25} height={25} fill="currentColor"  />
+          <Link to={{pathname:"https://github.com/aydansamedova"}}  target='_blank' style={props.theme==="dark" ? {color:'#fff'} : {color:'#000'}}>
+            <Github width={25} height={25} fill={props.theme==="dark" ?  "#fff" : Dark.text} />
           </Link>
      
    
@@ -39,8 +40,8 @@ const Social = () => {
             <img src={LinkedinPng} width={25} height={25} alt="Linkedin"  />
           </Link>
       
-          <Link to={{pathname:"https://www.facebook.com/profile.php?id=100004080731564"}} target='_blank' style={{color:"black"}}>
-            <Facebook width={25} height={25} fill="currentColor" />
+          <Link to={{pathname:"https://www.facebook.com/profile.php?id=100004080731564"}} target='_blank' style={props.theme==="dark" ?  {color:'#fff'} : {color:'#000'}}>
+            <Facebook width={25} height={25} fill={props.theme==="dark" ?  Dark.body : Dark.text} />
           </Link>
   
           <Link to={{pathname:"https://medium.com/@aydan2903"}} target='_blank'>
