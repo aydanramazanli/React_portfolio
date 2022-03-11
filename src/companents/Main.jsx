@@ -1,9 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React , {useState}from "react";
+import styled, {keyframes} from "styled-components";
 import Button from '../SubCompanents/Button'
 import Logo from '../SubCompanents/Logo'
 import Social from '../SubCompanents/Social'
 import {Link} from 'react-router-dom'
+import {YinYang} from './Svgs'
 
 
 //Main Container
@@ -85,14 +86,59 @@ z-index: 1;
 `
 
 
+//animate ying yang
+const rotate=keyframes`
+from{
+  transform :rotate(0)
+}
+to{
+  transform:rotate(360deg)
+}
+`
+
+//Center
+const Center = styled.button`
+position:absolute;
+top:${props=>props.click? '85%' : '50%'};
+left:${props=>props.click? '90%' : '50%'};
+transform:translate(-50%, -50%);
+border:none;
+outline:none;
+background-color:transparent;
+transition:all 2s ease;
+display: flex;
+flex-direction:column;
+justify-content: center;
+align-items:center;
+
+&>:first-child{
+  animation:${rotate} infinite 1.5s linear;
+}
+
+&>:last-child{
+  display:${props=>props.click? 'none' : 'block'};
+  padding-top:1rem;
+}
+`
+
+
 
 const Main = () => {
+  const [click,setClick] =useState(false)
+
+  const clickButton=()=>{
+    setClick(!click)
+  }
   return (
     <MainContainer>
       <Container>
         <Button/>
         <Logo/>
         <Social/>
+        <Center click={click}>
+          <YinYang onClick={()=>clickButton()} width={click? 150 : 200}  height={click? 150 :200} fill='currentColor'/>
+          <span>Click Here</span>
+        </Center>
         <Contact target="_blank" to={{pathname:"mailto:aydansamedva@gmail.com"}}>
           <h3>
             contact with me...
