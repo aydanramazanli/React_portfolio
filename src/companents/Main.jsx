@@ -117,6 +117,7 @@ display: flex;
 flex-direction:column;
 justify-content: center;
 align-items:center;
+z-index: 10;
 
 &>:first-child{
   animation:${rotate} infinite 1.5s linear;
@@ -195,3 +196,4 @@ const Main = () => {
 };
 
 export default Main;
+

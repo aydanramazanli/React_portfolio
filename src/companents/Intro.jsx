@@ -11,7 +11,7 @@ left:50%;
 top:50%;
 transform:translate(-50%, -50%);
 width:55vw;
-height: 55vh;
+height: 42vh;
 display:flex;
 background-image: 
 background: linear-gradient(
@@ -75,7 +75,7 @@ const Intro = () => {
         animate={{opacity: 1}}
         transition={{ duration:1, delay:2 }}
                 >
-                    <img className="pic" src={Me} alt="Profile Pic" style={{width:"250px", height:"250px"}} />
+                    <img className="pic" src={Me} alt="Profile Pic" style={{width:"100%", height:"100%", objectFit:"cover"}} />
                 </div>
             </Box>
     </IntroBox>
