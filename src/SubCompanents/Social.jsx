@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Github, Facebook } from "../companents/Svgs";
-import LinkedinPng from "../assets/svg/icons8-linkedin-50.png";
-import MediumPng from "../assets/svg/icons8-medium-monogram-50.png";
-import {Dark, DarkTheme} from "../companents/DarkMood"
+import { Github, Facebook, Medium,Linkedin } from "../companents/Svgs";
+import {Dark} from "../companents/DarkMood"
 
 const Icon = styled.div`
   display: flex;
@@ -24,28 +22,29 @@ const Icon = styled.div`
 const Line = styled.span`
   width: 2px;
   height: 6rem;
-  background-color: ${props => props.theme.text};
+  background-color: ${props => props.color === 'dark' ? Dark.text : Dark.body  };
 `;
 const Social = (props) => {
+  console.log(Dark)
   return (
  
       <Icon>
        
-          <Link to={{pathname:"https://github.com/aydansamedova"}}  target='_blank' style={props.theme==="dark" ? {color:'#fff'} : {color:'#000'}}>
-            <Github width={25} height={25} fill={props.theme==="dark" ?  "#fff" : Dark.text} />
+          <Link to={{pathname:"https://github.com/aydansamedova"}}  target='_blank' >
+            <Github width={25} height={25}  fill={props.theme === "dark" ? Dark.text  : Dark.body  } />
           </Link>
      
    
-          <Link  to={{pathname:"https://www.linkedin.com/in/aydan-samedova-6a8628196/"}} target='_blank'>
-            <img src={LinkedinPng} width={25} height={25} alt="Linkedin"  />
+          <Link  to={{pathname:"https://www.linkedin.com/in/aydan-samedova-6a8628196/"}} target='_blank' >
+            <Linkedin width={25} height={25}  fill={props.theme === "dark" ? Dark.text  : Dark.body  } />
           </Link>
       
-          <Link to={{pathname:"https://www.facebook.com/profile.php?id=100004080731564"}} target='_blank' style={props.theme==="dark" ?  {color:'#fff'} : {color:'#000'}}>
-            <Facebook width={25} height={25} fill={props.theme==="dark" ?  Dark.body : Dark.text} />
+          <Link to={{pathname:"https://www.facebook.com/profile.php?id=100004080731564"}} target='_blank' >
+            <Facebook width={25} height={25} fill={props.theme === "dark" ? Dark.text  : Dark.body  } />
           </Link>
   
-          <Link to={{pathname:"https://medium.com/@aydan2903"}} target='_blank'>
-            <img src={MediumPng} width={25} height={25} alt="Linkedin" />
+          <Link to={{pathname:"https://medium.com/@aydan2903"}} target='_blank' style={{ color: Dark.text} } >
+          <Medium width={25} height={25} fill={props.theme === "dark" ? Dark.text  : Dark.body  }  />
           </Link>
     
         <Line />
