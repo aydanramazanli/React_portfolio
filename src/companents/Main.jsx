@@ -3,6 +3,7 @@ import styled, {keyframes} from "styled-components";
 import Button from '../SubCompanents/Button'
 import Logo from '../SubCompanents/Logo'
 import Social from '../SubCompanents/Social'
+import Intro from './Intro'
 import {Link} from 'react-router-dom'
 import {YinYang} from './Svgs'
 
@@ -152,7 +153,7 @@ const Main = () => {
        <DarkMood click={click}/>
       <Container>
         <Button/>
-        <Logo/>
+        <Logo theme ={click? 'dark' : 'light'}/>
         <Social theme ={click? 'dark' : 'light'} />
        
         <Center click={click}>
@@ -188,6 +189,7 @@ const Main = () => {
         
         </BottomBar>
       </Container>
+      {click ? <Intro  click={click} />:null}
     </MainContainer>
   );
 };

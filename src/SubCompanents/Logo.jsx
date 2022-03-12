@@ -1,22 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Dark} from '../companents/DarkMood'
 
 
 const LogoStyle= styled.h1`
 display:inline-block;
-color:${props=>props.theme.text}
-font-family:'Pacifico', cursive
-
+color:${props => props.color === 'dark' ? Dark.text : Dark.body  };
+font-family:'Pacifico', cursive;
 position:fixed;
 left:2rem;
+font-size:2rem;
 top:2rem;
-z-index:3;
+z-index:1;
 
 `
 
-const Logo = () => {
+const Logo = (props) => {
   return (
-    <LogoStyle>Aydan</LogoStyle>
+    <LogoStyle color={props.theme}>Aydan</LogoStyle>
   )
 }
 

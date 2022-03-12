@@ -47,7 +47,7 @@ const Social = (props) => {
           <Medium width={25} height={25} fill={props.theme === "dark" ? Dark.text  : Dark.body  }  />
           </Link>
     
-        <Line />
+        <Line color={props.theme}/>
       </Icon>
 
     
