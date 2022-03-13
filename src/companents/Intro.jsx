@@ -1,17 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 import Me from '../assets/Images/me.jpg'
+import {motion} from 'framer-motion'
 
 
 
-const IntroBox=styled.div`
+
+const IntroBox=styled(motion.div)`
 z-index:3;
 position:absolute;
 left:50%;
 top:50%;
 transform:translate(-50%, -50%);
 width:55vw;
-height: 42vh;
+
 display:flex;
 background-image: 
 background: linear-gradient(
@@ -61,7 +63,12 @@ justify-content:space-evenly;
 
 const Intro = () => {
   return (
-    <IntroBox>
+    <IntroBox 
+    initial={{height:0}}
+    animate={{height:"42vh"}}
+    transition={{ duration:1, delay:1}}
+    
+    >
          <Box>
                 <Text>
                     <h1>Hi,</h1>
@@ -71,9 +78,7 @@ const Intro = () => {
             </Box>
             <Box>
                 <div
-                initial={{opacity:0}}
-        animate={{opacity: 1}}
-        transition={{ duration:1, delay:2 }}
+              
                 >
                     <img className="pic" src={Me} alt="Profile Pic" style={{width:"100%", height:"100%", objectFit:"cover"}} />
                 </div>
@@ -81,5 +86,4 @@ const Intro = () => {
     </IntroBox>
   )
 }
-
 export default Intro

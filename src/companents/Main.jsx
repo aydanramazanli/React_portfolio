@@ -1,10 +1,12 @@
 import React , {useState}from "react";
 import styled, {keyframes} from "styled-components";
+import {Link} from 'react-router-dom'
+import {motion} from 'framer-motion'
 import Button from '../SubCompanents/Button'
 import Logo from '../SubCompanents/Logo'
 import Social from '../SubCompanents/Social'
 import Intro from './Intro'
-import {Link} from 'react-router-dom'
+
 import {YinYang} from './Svgs'
 
 
@@ -159,33 +161,36 @@ const Main = () => {
        
         <Center click={click}>
            <YinYang onClick={()=>clickButton()} width={click? 150 : 200}  height={click? 150 :200} fill='currentColor'/> 
-          <span>Click Here</span>
+          <motion.span   whileHover={{scale:1.3}}  whileTap={{ rotate: 90, scale: 0.75 }}>Click Here</motion.span>
         </Center>
         <Contact target="_blank" to={{pathname:"mailto:aydansamedva@gmail.com"}}>
-          <h3>
-            contact with me...
-          </h3>
+          <motion.h3
+          whileHover={{scale:1.1}}
+          whileTap={{ rotate: 90, scale: 0.75 }}
+          >
+            Contact with me...
+          </motion.h3>
         </Contact>
         <Blog  to='/blog'>
-          <h3>
+          <motion.h3     whileHover={{scale:1.3}} whileTap={{ rotate: -90, scale: 0.75 }}>
             Blog
-          </h3>
+          </motion.h3>
         </Blog>
         <Work  to='/works'  click={click}>
-          <h3>
+          <motion.h3    whileHover={{scale:1.3}}  whileTap={{ rotate: 90, scale: 0.75 }}>
             Works
-          </h3>
+          </motion.h3>
         </Work>
         <BottomBar >
           <About to='/about' click={click}>
-          <h3>
+          <motion.h3     whileHover={{scale:1.3}} whileTap={{ rotate: 90, scale: 0.75 }}>
            About.
-          </h3>
+          </motion.h3>
           </About>
           <Skills to='/skills'>
-          <h3>
+          <motion.h3    whileHover={{scale:1.3}}  whileTap={{ rotate: 90, scale: 0.75 }}>
           My Skills.
-          </h3>
+          </motion.h3>
           </Skills>
         
         </BottomBar>
