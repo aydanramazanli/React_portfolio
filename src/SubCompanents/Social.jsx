@@ -25,7 +25,7 @@ const Line = styled.span`
   background-color: ${props => props.color === 'dark' ? Dark.text : Dark.body  };
 `;
 const Social = (props) => {
-  console.log(Dark)
+
   return (
  
       <Icon>

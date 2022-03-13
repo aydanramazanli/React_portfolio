@@ -1,3 +1,6 @@
+
+import React from 'react';
+
 //Main button
 export const HomeButton = (props) => {
     return (

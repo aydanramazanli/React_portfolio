@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Dark} from '../companents/DarkMood'
+import {Link} from 'react-router-dom'
 
 
 const LogoStyle= styled.h1`
@@ -17,7 +18,10 @@ z-index:1;
 
 const Logo = (props) => {
   return (
-    <LogoStyle color={props.theme}>Aydan</LogoStyle>
+    <Link to ='/'>
+      <LogoStyle color={props.theme}>Aydan</LogoStyle>
+      </Link>
+  
   )
 }
 

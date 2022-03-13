@@ -93,8 +93,6 @@ text-decoration: none;
 z-index: 1;
 font-weight:700;
 `
-
-
 //animate ying yang
 const rotate=keyframes`
 from{
@@ -104,7 +102,6 @@ to{
   transform:rotate(360deg)
 }
 `
-
 //Center
 const Center = styled.button`
 position:absolute;
@@ -161,7 +158,7 @@ const Main = () => {
        
         <Center click={click}>
            <YinYang onClick={()=>clickButton()} width={click? 150 : 200}  height={click? 150 :200} fill='currentColor'/> 
-          <motion.span   whileHover={{scale:1.3}}  whileTap={{ rotate: 90, scale: 0.75 }}>Click Here</motion.span>
+    
         </Center>
         <Contact target="_blank" to={{pathname:"mailto:aydansamedva@gmail.com"}}>
           <motion.h3
@@ -188,7 +185,7 @@ const Main = () => {
           </motion.h3>
           </About>
           <Skills to='/skills'>
-          <motion.h3    whileHover={{scale:1.3}}  whileTap={{ rotate: 90, scale: 0.75 }}>
+          <motion.h3  whileHover={{scale:1.3}}  whileTap={{ rotate: 90, scale: 0.75 }}>
           My Skills.
           </motion.h3>
           </Skills>
