@@ -3,7 +3,7 @@ import styled, {ThemeProvider} from 'styled-components'
 import Social from '../SubCompanents/Social'
 import Button from '../SubCompanents/Button'
 import Logo from '../SubCompanents/Logo'
-
+import Title from '../SubCompanents/Title'
 import {Light} from './DarkMood'
 import { Develope } from './Svgs'
 
@@ -39,7 +39,7 @@ cursor:pointer;
 
 
 `
-const Title= styled.h2`
+const SubTitle= styled.h2`
 display:flex;
 justify-content:center;
 align-items: center;
@@ -89,12 +89,13 @@ const Skills = () => {
         <Button />
    
         <Main>
-<Title>
+        <Title text="Skills" top="10%" left="5%" />
+<SubTitle>
   <Develope width={40} height={40}>
    
   </Develope>
   Front end Developer
-</Title>
+</SubTitle>
 
 <Description>
   <strong>Skills</strong>

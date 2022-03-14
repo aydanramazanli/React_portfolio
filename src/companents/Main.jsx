@@ -180,7 +180,7 @@ const Main = () => {
         </Work>
         <BottomBar >
           <About to='/about' click={click}>
-          <motion.h3     whileHover={{scale:1.3}} whileTap={{ rotate: 90, scale: 0.75 }}>
+          <motion.h3  whileHover={{scale:1.3}} whileTap={{ rotate: 90, scale: 0.75 }}>
            About.
           </motion.h3>
           </About>
