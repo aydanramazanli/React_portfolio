@@ -162,7 +162,7 @@ const Main = () => {
     
         </Center>
         <Contact target="_blank" to={{pathname:"mailto:aydansamedva@gmail.com"}}>
-          <motion.h3
+          <motion.h3 style={{fontWeight:"bold"}}
           whileHover={{scale:1.1}}
           whileTap={{ rotate: 90, scale: 0.75 }}
           initial={{
@@ -178,7 +178,7 @@ const Main = () => {
           </motion.h3>
         </Contact>
         <Blog  to='/blog'>
-          <motion.h3 
+          <motion.h3  style={{fontWeight:"bold"}} 
             initial={{
               x: -200,
               transition :{type:'spring', duration:1.5, delay:1}
@@ -192,7 +192,7 @@ const Main = () => {
           </motion.h3>
         </Blog>
         <Projects  to='/projects'  click={click}>
-          <motion.h3 
+          <motion.h3  style={{fontWeight:"bold"}} 
           initial={{
             x: -200,
             transition :{type:'spring', duration:1.5, delay:1}
@@ -207,7 +207,7 @@ const Main = () => {
         </Projects>
         <BottomBar >
           <About to='/about' click={click}>
-          <motion.h3 initial={{
+          <motion.h3  style={{fontWeight:"bold"}} initial={{
               y: 200,
               transition :{type:'spring', duration:1.5, delay:1}
             }}
@@ -219,7 +219,7 @@ const Main = () => {
           </motion.h3>
           </About>
           <Skills to='/skills'>
-          <motion.h3 initial={{
+          <motion.h3 style={{fontWeight:"bold"}}  initial={{
               x: -200,
               transition :{type:'spring', duration:1.5, delay:1}
             }}

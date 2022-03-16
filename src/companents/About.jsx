@@ -5,7 +5,6 @@ import {motion} from 'framer-motion'
 import Logo from '../SubCompanents/Logo'
 import Button from '../SubCompanents/Button'
 import Social from '../SubCompanents/Social'
-//import ParticleComponent from '../subComponents/ParticleComponent';
 import Title from '../SubCompanents/Title'
 import astronaut from '../assets/Images/spaceman.png'
 

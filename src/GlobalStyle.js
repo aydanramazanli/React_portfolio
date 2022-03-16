@@ -16,6 +16,8 @@ body{
     padding: 0;
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
+    font-family: 'Mukta', sans-serif;
+    font-family: 'Pacifico', cursive;
     font-family: 'Poppins', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto Mono', monospace;

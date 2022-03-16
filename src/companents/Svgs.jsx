@@ -122,48 +122,7 @@ export const Link = (props) => {
   }
   
   
-//User
-export const User = (props) => { 
-    return (
-      <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="70mm"
-      height="70mm"
-      viewBox="0 0 248.031 248.031"
-      {...props}
-    >
-      <g transform="translate(0 -804.33)">
-        <path
-        fill={props.fill}
-          style={{
-            opacity: 1,
-            fillOpacity: 1,
-            fillRule: "nonzero",
-            
-            strokeWidth: 0.50507629,
-            strokeOpacity: 1,
-          }}
-          d="M76.423 1042.717c-2.222-.227-4.722-.682-5.555-1.012-.834-.33-9.339-2.857-18.9-5.616-9.562-2.758-17.453-5.083-17.535-5.165-.24-.24 2.279-42.512 2.864-48.082 2.267-21.584 6.048-32.16 14.865-41.586 7.59-8.115 14.922-11.772 27.544-13.74 5.511-.858 39.444-1.23 47.62-.522 13.001 1.127 21.307 3.104 29.124 6.934 3.946 1.932 5.526 3.088 9.142 6.685 9.42 9.37 13.766 22.358 15.855 47.383 1.165 13.965 2.488 42.597 1.99 43.079-.918.888-17.737 5.597-23.365 6.541-20.441 3.43-70.258 6.467-83.649 5.101z"
-        />
-        <ellipse
-             fill={props.fill}
-          style={{
-            opacity: 1,
-            fillOpacity: 1,
-            fillRule: "nonzero",
-            stroke: "#000",
-            strokeOpacity: 1,
-          }}
-          cx={106.962}
-          cy={883.104}
-          rx={40.659}
-          ry={38.328}
-        />
-      </g>
-    </svg>
-    )
-  
-  }
+
 //Cv
 export const Cv =(props)=>{
   return(
@@ -281,6 +240,7 @@ export const Cv =(props)=>{
   </svg>
   )
 }
+
 //Develope
 export const Develope = (props) => { 
     return (

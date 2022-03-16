@@ -7,6 +7,8 @@ import SingleBlog from './SingleBlog'
 import  BlogDetail  from "../SubCompanents/BlogDetail";
 import BlogImg from "../assets/Images/blog.jpg";
 import {motion} from 'framer-motion'
+
+
 //Blog Container
 const BlogContainer = styled(motion.div)`
   background-image: url(${BlogImg});
