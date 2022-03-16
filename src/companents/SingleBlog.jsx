@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import {motion} from 'framer-motion'
-import example from '../assets/Images/spaceman.png'
+import example from '../assets/Images/blog.jpg'
 
 const  Single= styled(motion(Link))`
 width: calc(10rem + 15 wv);

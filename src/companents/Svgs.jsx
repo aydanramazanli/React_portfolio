@@ -122,27 +122,165 @@ export const Link = (props) => {
   }
   
   
-//Design  
-export const Design = (props) => { 
+//User
+export const User = (props) => { 
     return (
       <svg
-        aria-hidden="true"
-        data-prefix="fas"
-        data-icon="palette"
-        className="prefix__svg-inline--fa prefix__fa-palette prefix__fa-w-16"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-        {...props}
-      >
+      xmlns="http://www.w3.org/2000/svg"
+      width="70mm"
+      height="70mm"
+      viewBox="0 0 248.031 248.031"
+      {...props}
+    >
+      <g transform="translate(0 -804.33)">
         <path
-          fill={props.fill}
-          d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"
+        fill={props.fill}
+          style={{
+            opacity: 1,
+            fillOpacity: 1,
+            fillRule: "nonzero",
+            
+            strokeWidth: 0.50507629,
+            strokeOpacity: 1,
+          }}
+          d="M76.423 1042.717c-2.222-.227-4.722-.682-5.555-1.012-.834-.33-9.339-2.857-18.9-5.616-9.562-2.758-17.453-5.083-17.535-5.165-.24-.24 2.279-42.512 2.864-48.082 2.267-21.584 6.048-32.16 14.865-41.586 7.59-8.115 14.922-11.772 27.544-13.74 5.511-.858 39.444-1.23 47.62-.522 13.001 1.127 21.307 3.104 29.124 6.934 3.946 1.932 5.526 3.088 9.142 6.685 9.42 9.37 13.766 22.358 15.855 47.383 1.165 13.965 2.488 42.597 1.99 43.079-.918.888-17.737 5.597-23.365 6.541-20.441 3.43-70.258 6.467-83.649 5.101z"
         />
-      </svg>
+        <ellipse
+             fill={props.fill}
+          style={{
+            opacity: 1,
+            fillOpacity: 1,
+            fillRule: "nonzero",
+            stroke: "#000",
+            strokeOpacity: 1,
+          }}
+          cx={106.962}
+          cy={883.104}
+          rx={40.659}
+          ry={38.328}
+        />
+      </g>
+    </svg>
     )
   
   }
-
+//Cv
+export const Cv =(props)=>{
+  return(
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 744.09 1052.4"
+    {...props}
+  >
+    <g transform="matrix(1.2122 0 0 1.2401 -88.015 -110.96)">
+      <rect
+        style={{
+          fillRule: "evenodd",
+          stroke: "#000",
+          strokeWidth: 12.069,
+          fill: "#fff",
+        }}
+        ry={0}
+        height={820.55}
+        width={602.37}
+        y={101.52}
+        x={79.868}
+      />
+      <path
+      fill={props.fill}
+        id="a"
+        style={{
+          stroke: "#000",
+          strokeWidth: "5.7328px",
+        
+        }}
+        d="M164.69 204.53H595.4"
+      />
+      <use
+        style={{
+          stroke: "#000",
+          fill: "#000",
+        }}
+        xlinkHref="#a"
+        transform="translate(0 431.78)"
+        height={900}
+        width={800}
+      />
+      <use
+        style={{
+          stroke: "#000",
+          fill: "#000",
+        }}
+        xlinkHref="#a"
+        transform="translate(0 371.43)"
+        height={900}
+        width={800}
+      />
+      <use
+        style={{
+          stroke: "#5d3a3a",
+          fill: "#000",
+        }}
+        xlinkHref="#a"
+        transform="translate(0 311.08)"
+        height={900}
+        width={800}
+      />
+      <use
+        style={{
+          stroke: "#000",
+          fill: "#000",
+        }}
+        xlinkHref="#a"
+        transform="translate(0 250.74)"
+        height={900}
+        width={800}
+      />
+      <use
+        style={{
+          stroke: "#000",
+          fill: "#000",
+        }}
+        xlinkHref="#a"
+        transform="translate(0 190.39)"
+        height={900}
+        width={800}
+      />
+      <use
+        style={{
+          stroke: "#000",
+          fill: "#000",
+        }}
+        xlinkHref="#a"
+        transform="translate(0 130.05)"
+        height={900}
+        width={800}
+      />
+      <use
+        style={{
+          stroke: "#000",
+          fill: "#000",
+        }}
+        xlinkHref="#a"
+        transform="translate(0 69.526)"
+        height={900}
+        width={800}
+      />
+      <use
+        style={{
+          stroke: "#000",
+          fill: "#000",
+        }}
+        xlinkHref="#a"
+        transform="matrix(.49775 0 0 1 299.88 552.76)"
+        height={900}
+        width={800}
+      />
+    </g>
+  </svg>
+  )
+}
 //Develope
 export const Develope = (props) => { 
     return (
