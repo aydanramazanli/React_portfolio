@@ -24,8 +24,8 @@ z-index:3;
 cursor:pointer;
 
 &:hover
-{background-color: rgba(191,153,114);
-box-shadow: 0 0 8px 6px rgba(78,53,36,0.4);}
+{background-color: rgba(0,255,0);
+box-shadow: 0 0 8px 6px rgba(0,255,0, 0.4);}
 `;
 
 const Button = () => {

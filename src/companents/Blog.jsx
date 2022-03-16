@@ -1,10 +1,10 @@
-import React ,{useEffect, useState}from "react";
+import React ,{ useState}from "react";
 import styled from "styled-components";
 import Button from "../SubCompanents/Button";
 import Logo from "../SubCompanents/Logo";
 import Social from "../SubCompanents/Social";
 import SingleBlog from './SingleBlog'
-import  BlogDetail  from "../SubCompanents/BlogDetail";
+
 import BlogImg from "../assets/Images/blog.jpg";
 import {motion} from 'framer-motion'
 
@@ -57,10 +57,7 @@ const container = {
 const Blog = () => {
   const [numbers, setNumbers] = useState(0);
 
-  useEffect(() => {
-      let num = (window.innerHeight - 70)/30;
-      setNumbers(parseInt(num));
-  }, [])
+ 
   return (
     <BlogContainer
     variants={container} initial='hidden' animate='show'
@@ -70,7 +67,7 @@ const Blog = () => {
         <Logo />
         <Social />
         <Button />
-<BlogDetail number={numbers}/>
+
         <Center>
           <Grid>
 <SingleBlog/>

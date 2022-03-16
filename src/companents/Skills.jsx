@@ -2,11 +2,15 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { Link } from "react-router-dom";
 import Social from "../SubCompanents/Social";
+import { motion } from "framer-motion";
 import Button from "../SubCompanents/Button";
 import Logo from "../SubCompanents/Logo";
 import Title from "../SubCompanents/Title";
 import { Light } from "./DarkMood";
 import { Develope, Cv } from "./Svgs";
+import Documents from "../SubCompanents/Documents";
+
+
 
 const Box = styled.div`
   background: ${(props) => props.theme.text};
@@ -20,7 +24,7 @@ const Box = styled.div`
   align-items: center;
 `;
 
-const Main = styled.div`
+const Main = styled(motion.div)`
   border: 2px solid ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
   background: ${(props) => props.theme.body};
@@ -42,7 +46,7 @@ const Main = styled.div`
   }
 `;
 
-const MainCV = styled.div`
+const MainCV = styled(motion.div)`
   border: 2px solid ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
   background: ${(props) => props.theme.body};
@@ -109,14 +113,27 @@ const Links = styled(Link)`
   align-items: center;
   cursor: pointer;
 `;
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+  },
+};
 const Skills = () => {
+
   return (
     <ThemeProvider theme={Light}>
       <Box>
         <Logo theme="dark" />
         <Social theme="dark" />
         <Button />
-        <Main>
+        <Main
+          variants={container}
+          initial="hidden"
+          animate="show"
+          transition={{ type: "spring", duration: 1, delay: 1.2 }}
+        >
           <Title text="Skills" top="10%" left="5%" />
           <SubTitle>
             <Develope width={40} height={40}></Develope>
@@ -131,24 +148,32 @@ const Skills = () => {
             </p>
           </Description>
           <Description>
-          <strong>Tools</strong>
+            <strong>Tools</strong>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
               porro qui rerum veniam.
             </p>
           </Description>
         </Main>
-        <MainCV>
+        <MainCV
+          variants={container}
+          initial="hidden"
+          animate="show"
+          transition={{ type: "spring", duration: 1, delay: 1.4 }}
+        >
           <SubTitle>Aydan Samedova</SubTitle>
-
-          <Links href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf">
+          <Documents>
+           <Links >
+         
             <h3 style={{ margin: "15px " }}>Downlade CV</h3>
-
             <Cv width={100} height={100} />
-          </Links>
+           
+          </Links> 
+         </Documents>
+
         </MainCV>
-        
       </Box>
     </ThemeProvider>
-  )
-};export default Skills 
+  );
+};
+export default Skills;

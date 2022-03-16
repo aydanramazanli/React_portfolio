@@ -13,7 +13,7 @@ import {YinYang} from './Svgs'
 
 //Main Container
 const MainContainer = styled.div`
-  background: ${(props) => props.theme.body};
+  background:  ${props=>props.theme.body};
   width: 100vw;
   height: 100vh;
   overflow: hidden;

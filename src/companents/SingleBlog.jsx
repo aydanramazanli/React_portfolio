@@ -49,6 +49,7 @@ font-family:'' sans-serif;
 font-weight:bold;
 cursor:pointer;
 border-bottom: 1px solid grey;
+
 `
 
 const Date= styled.span`
@@ -78,6 +79,7 @@ const SingleBlog = () => {
           <Single to='/' target='_blank'
              variants={Item}>
     <Image />
+    
     <Title>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque tenetur possimus magni.
     </Title>

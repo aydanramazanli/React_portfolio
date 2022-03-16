@@ -32,7 +32,7 @@ img{
     height: auto;
 }
 `
-const Main =  styled.div`
+const Main =  styled(motion.div)`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
   padding: 2rem;
@@ -53,23 +53,35 @@ const Main =  styled.div`
   font-style: italic;
 `
 
+const container = {
 
+    hidden: {opacity:0},
+    show: {
+      opacity:1,
+  
+      transition:{
+       
+        duration: 1,
+      }
+    }
+  
+  }
 
 
 const AboutPage = () => {
     return (
         <ThemeProvider theme={Dark}>
-<Box>
+<Box >
 <Button/>
 <Logo theme='dark'/>
 <Social theme='dark'/>
 <div />
-<div theme='dark' />
+<div theme='dark'  />
 
         <Spaceman>
             <motion.img src={astronaut} alt="spaceman"  drag/>
         </Spaceman>    
-        <Main>
+        <Main variants={container} initial='hidden' animate='show'>
        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam id ea modi autem voluptas hic sunt debitis non ex.
         </Main>
 
