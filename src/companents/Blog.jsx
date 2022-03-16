@@ -6,9 +6,9 @@ import Social from "../SubCompanents/Social";
 import SingleBlog from './SingleBlog'
 import  BlogDetail  from "../SubCompanents/BlogDetail";
 import BlogImg from "../assets/Images/blog.jpg";
-
+import {motion} from 'framer-motion'
 //Blog Container
-const BlogContainer = styled.div`
+const BlogContainer = styled(motion.div)`
   background-image: url(${BlogImg});
   background-size: cover;
   background-repeat: no-repeat;
@@ -30,7 +30,7 @@ const Center = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem 10rem;
+  padding: 5rem 13rem;
 
 `;
 
@@ -39,7 +39,19 @@ display: grid;
 grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
 grid-gap: calc(1rem + 2vw);
 `
+const container = {
 
+  hidden: {opacity:0},
+  show: {
+    opacity:1,
+
+    transition:{
+     
+      duration: 0.5,
+    }
+  }
+
+}
 const Blog = () => {
   const [numbers, setNumbers] = useState(0);
 
@@ -48,7 +60,10 @@ const Blog = () => {
       setNumbers(parseInt(num));
   }, [])
   return (
-    <BlogContainer>
+    <BlogContainer
+    variants={container} initial='hidden' animate='show'
+    exit={{opacity: 0, transition:{duration:0.5}}}
+    >
       <Container>
         <Logo />
         <Social />

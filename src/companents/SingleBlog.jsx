@@ -1,9 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
+import {motion} from 'framer-motion'
 import example from '../assets/Images/spaceman.png'
 
-const  Single= styled(Link)`
+const  Single= styled(motion(Link))`
 width: calc(10rem + 15 wv);
 text-decoration: none;
 height: 20rem;
@@ -49,31 +50,44 @@ font-weight:bold;
 cursor:pointer;
 border-bottom: 1px solid grey;
 `
-const HasTags=styled.div`
-padding:0.2rem 0;
-`
 
 const Date= styled.span`
 padding-right: 0.5rem;
 margin-bottom:0.5rem;
 `
 
+const Item = {
+    hidden:{
+        scale:0
+    },
+    show:{
+        scale:1,
+        transition: {
+            type: 'spring',
+            duration: 0.5
+        }
+    }
+}
 
-const SingleBlog = (props) => {
+
+const SingleBlog = () => {
     //api name tags date img link=blog
   return (
-    <Single to='/' target='_blank'>
+
+
+          <Single to='/' target='_blank'
+             variants={Item}>
     <Image />
     <Title>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque tenetur possimus magni.
     </Title>
-    <HasTags>
-        Hastag
-    </HasTags>
+    
     <Date>
         03.03.2022
     </Date>
     </Single>
+
+  
   )
 }
 

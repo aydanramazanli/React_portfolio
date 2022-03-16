@@ -1,22 +1,28 @@
 import React from 'react';
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Light} from './companents/DarkMood';
+import {AnimatePresence} from 'framer-motion'
 import Global from './GlobalStyle';
 //companents
 import Main from './companents/Main'
 import About from './companents/About'
 import Blog from './companents/Blog'
 import Skills from './companents/Skills'
-import Works from './companents/Works'
+import Projects from './companents/Projects'
+
 
 function App() {
+  const Location=useLocation()
   return (
     <>
     <Global/>
     <ThemeProvider theme={Light}>
-      <Switch>
+
+
+<AnimatePresence exitBeforeEnter>
+<Switch location={location} key={location.pathname}>
        <Route path="/" exact>
          <Main/>
        </Route>
@@ -29,12 +35,15 @@ function App() {
        <Route path="/skills">
          <Skills/>
        </Route>
-       <Route path="/works">
-         <Works/>
+       <Route path="/projects">
+         <Projects/>
        </Route>
 
       </Switch>
   
+</AnimatePresence>
+
+     
     </ThemeProvider>
  
     </>

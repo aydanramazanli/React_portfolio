@@ -6,7 +6,7 @@ import Button from '../SubCompanents/Button'
 import Logo from '../SubCompanents/Logo'
 import Social from '../SubCompanents/Social'
 import Intro from './Intro'
-
+import Sound from '../SubCompanents/Sound'
 import {YinYang} from './Svgs'
 
 
@@ -57,7 +57,7 @@ text-decoration: none;
 z-index: 1;
 `
 //Work
-const Work = styled(Link)`
+const Projects = styled(Link)`
 color: ${props=>props.click ? props.theme.body: props.theme.text};
 position: absolute;
 top: 50%;
@@ -131,7 +131,7 @@ z-index: 10;
 // main dark side
 const DarkMood = styled.div`
 position:absolute;
-background:black;
+background: ${(props) => props.theme.text};
 top: 0;
 bottom: 0;
 right: 50%;
@@ -153,9 +153,10 @@ const Main = () => {
        <DarkMood click={click}/>
       <Container>
         <Button/>
+        <Sound theme ={click? 'dark' : 'light'} />
         <Logo theme ={click? 'dark' : 'light'}/>
         <Social theme ={click? 'dark' : 'light'} />
-       
+    
         <Center click={click}>
            <YinYang onClick={()=>clickButton()} width={click? 150 : 200}  height={click? 150 :200} fill='currentColor'/> 
     
@@ -164,28 +165,68 @@ const Main = () => {
           <motion.h3
           whileHover={{scale:1.1}}
           whileTap={{ rotate: 90, scale: 0.75 }}
+          initial={{
+            y: -200,
+            transition :{type:'spring', duration:1.5, delay:1}
+          }}
+          animate={{
+            y: 0,
+            transition :{type:'spring', duration:1.5, delay:1}
+          }}
           >
             Contact with me...
           </motion.h3>
         </Contact>
         <Blog  to='/blog'>
-          <motion.h3     whileHover={{scale:1.3}} whileTap={{ rotate: -90, scale: 0.75 }}>
+          <motion.h3 
+            initial={{
+              x: -200,
+              transition :{type:'spring', duration:1.5, delay:1}
+            }}
+            animate={{
+              x: 0,
+              transition :{type:'spring', duration:1.5, delay:1}
+            }}
+          whileHover={{scale:1.3}} whileTap={{ rotate: -90, scale: 0.75 }}>
             Blog
           </motion.h3>
         </Blog>
-        <Work  to='/works'  click={click}>
-          <motion.h3    whileHover={{scale:1.3}}  whileTap={{ rotate: 90, scale: 0.75 }}>
-            Works
+        <Projects  to='/projects'  click={click}>
+          <motion.h3 
+          initial={{
+            x: -200,
+            transition :{type:'spring', duration:1.5, delay:1}
+          }}
+          animate={{
+            x: 0,
+            transition :{type:'spring', duration:1.5, delay:1}
+          }}
+             whileHover={{scale:1.3}}  whileTap={{ rotate: 90, scale: 0.75 }}>
+            Projects
           </motion.h3>
-        </Work>
+        </Projects>
         <BottomBar >
           <About to='/about' click={click}>
-          <motion.h3  whileHover={{scale:1.3}} whileTap={{ rotate: 90, scale: 0.75 }}>
+          <motion.h3 initial={{
+              y: 200,
+              transition :{type:'spring', duration:1.5, delay:1}
+            }}
+            animate={{
+              y: 0,
+              transition :{type:'spring', duration:1.5, delay:1}
+            }} whileHover={{scale:1.3}} whileTap={{ rotate: 90, scale: 0.75 }}>
            About.
           </motion.h3>
           </About>
           <Skills to='/skills'>
-          <motion.h3  whileHover={{scale:1.3}}  whileTap={{ rotate: 90, scale: 0.75 }}>
+          <motion.h3 initial={{
+              x: -200,
+              transition :{type:'spring', duration:1.5, delay:1}
+            }}
+            animate={{
+              x: 0,
+              transition :{type:'spring', duration:1.5, delay:1}
+            }} whileHover={{scale:1.3}}  whileTap={{ rotate: 90, scale: 0.75 }}>
           My Skills.
           </motion.h3>
           </Skills>
