@@ -8,7 +8,14 @@ import Logo from "../SubCompanents/Logo";
 import Title from "../SubCompanents/Title";
 import { Light } from "./DarkMood";
 import { Develope, Cv } from "./Svgs";
-import Documents from "../SubCompanents/Documents";
+//import Documents from "../SubCompanents/Documents";
+import { Document, Page} from 'react-pdf/dist/esm/entry.webpack'
+import cv from '../assets/documents/Aydan Samedova- front end developer .pdf'
+import { pdfjs } from 'react-pdf';
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 
 
@@ -162,14 +169,12 @@ const Skills = () => {
           transition={{ type: "spring", duration: 1, delay: 1.4 }}
         >
           <SubTitle>Aydan Samedova</SubTitle>
-          <Documents>
-           <Links >
+          {/* <Links >
          
-            <h3 style={{ margin: "15px " }}>Downlade CV</h3>
-            <Cv width={100} height={100} />
-           
-          </Links> 
-         </Documents>
+         <h3 style={{ margin: "15px " }}>Downlade CV</h3>
+         <Cv width={100} height={100} />
+        
+       </Links>   */}
 
         </MainCV>
       </Box>

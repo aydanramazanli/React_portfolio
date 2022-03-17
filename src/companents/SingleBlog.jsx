@@ -1,8 +1,10 @@
-import React from 'react'
+import React , { useContext}  from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import {motion} from 'framer-motion'
 import example from '../assets/Images/blog.jpg'
+import {BlogContext} from '../data/Context'
+
 
 const  Single= styled(motion(Link))`
 width: calc(10rem + 15 wv);
@@ -51,12 +53,10 @@ cursor:pointer;
 border-bottom: 1px solid grey;
 
 `
-
 const Date= styled.span`
 padding-right: 0.5rem;
 margin-bottom:0.5rem;
 `
-
 const Item = {
     hidden:{
         scale:0
@@ -72,6 +72,9 @@ const Item = {
 
 
 const SingleBlog = () => {
+    const {datas }= useContext(BlogContext)
+
+ console.log(datas)
     //api name tags date img link=blog
   return (
 

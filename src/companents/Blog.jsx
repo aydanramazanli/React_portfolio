@@ -1,13 +1,12 @@
-import React ,{ useState}from "react";
+import React, { useContext} from "react";
 import styled from "styled-components";
 import Button from "../SubCompanents/Button";
 import Logo from "../SubCompanents/Logo";
 import Social from "../SubCompanents/Social";
-import SingleBlog from './SingleBlog'
-
+import SingleBlog from "./SingleBlog";
 import BlogImg from "../assets/Images/blog.jpg";
-import {motion} from 'framer-motion'
-
+import { motion } from "framer-motion";
+//import {BlogContext} from '../data/Context'
 
 //Blog Container
 const BlogContainer = styled(motion.div)`
@@ -33,35 +32,34 @@ const Center = styled.div`
   justify-content: center;
   align-items: center;
   padding: 5rem 13rem;
-
 `;
 
 const Grid = styled.div`
-display: grid;
-grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
-grid-gap: calc(1rem + 2vw);
-`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
+  grid-gap: calc(1rem + 2vw);
+`;
 const container = {
-
-  hidden: {opacity:0},
+  hidden: { opacity: 0 },
   show: {
-    opacity:1,
+    opacity: 1,
 
-    transition:{
-     
+    transition: {
       duration: 0.5,
-    }
-  }
+    },
+  },
+};
 
-}
+
 const Blog = () => {
-  const [numbers, setNumbers] = useState(0);
-
- 
+//  const {datas }= useContext(BlogContext)
+// console.log(datas)
   return (
     <BlogContainer
-    variants={container} initial='hidden' animate='show'
-    exit={{opacity: 0, transition:{duration:0.5}}}
+      variants={container}
+      initial="hidden"
+      animate="show"
+      exit={{ opacity: 0, transition: { duration: 0.5 } }}
     >
       <Container>
         <Logo />
@@ -70,22 +68,22 @@ const Blog = () => {
 
         <Center>
           <Grid>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
-<SingleBlog/>
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
+            <SingleBlog />
           </Grid>
         </Center>
       </Container>
