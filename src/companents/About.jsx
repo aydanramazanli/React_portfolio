@@ -127,7 +127,7 @@ const About = () => {
         <Logo theme="dark" />
         <Social theme="dark" />
         <Button />
-        <ReactCanvasNest className = 'canvasNest' config = {{ pointColor: ' 255, 255, 255 ' }} style = {{ zIndex: 1, backgroundColor:"darkgray"}} />
+        <ReactCanvasNest className = 'canvasNest' config = {{ pointColor: ' 128, 128, 128 ' }} style = {{ zIndex: 1, backgroundColor:"darkgray"}} />
         <Main
           variants={container}
           initial="hidden"

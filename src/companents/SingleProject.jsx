@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Github } from '../companents/Svgs'
+import { Dark } from "../companents/DarkMood";
 
 
 
@@ -29,19 +30,10 @@ border: 1px solid ${props => props.theme.text};
 const Title = styled.h2`
 font-size: calc(1em + 0.5vw);
 `
-
 const Description = styled.h2`
 font-size: calc(0.8em + 0.3vw);
 font-weight: 500;
 `
-const Tags = styled.div`
-border-top: 2px solid ${props =>props.theme.body};
-padding-top: 0.5rem;
-display:flex;
-flex-wrap:wrap;
-`
-
-
 const Footer = styled.footer`
 border-top: 2px solid ${props =>props.theme.body};
 padding-top:1rem;
@@ -53,31 +45,23 @@ ${Box}:hover &{
    
 }
 `
-
 const Links = styled(Link)`
 background-color: ${props =>props.theme.body};
 color: ${props =>props.theme.text};
 text-decoration: none;
-padding:0.5rem calc(2rem + 2vw);
+display:flex;
+justify-content: center;
+width:100%;
+padding:1rem 1.5rem;
 border-radius: 0 0 0 50px;
-font-size:calc(1em + 0.5vw);
+font-size:16px;
+align-items:center;
 ${Box}:hover &{
     background-color: ${props =>props.theme.text};
     color: ${props =>props.theme.body};
+    font-size:bold;
 }
 `
-
-const Git = styled(Link)`
-color: inherit;
-text-decoration: none;
-${Box}:hover &{
-    &>*{
-        fill:${props =>props.theme.text};
-    }
-}
-`
-
-
 const Item = {
     hidden:{
         scale:0
@@ -90,23 +74,26 @@ const Item = {
         }
     }
 }
-const SingleProject = () => {
+
+
+const SingleProject = ({ name,description, github}) => {
+ 
   return (
     <div>
 
 <Box  variants={Item}>
-            <Title>Name test</Title>
+            <Title>{name}</Title>
             <Description>
-               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, fugiat.
+              {description}
             </Description>
           
             <Footer>
-                <Links to='/'>
-                    Visit
+                <Links to={{pathname:github}} target="_blank"
+>
+             
+                 visit code
                 </Links>
-                <Git >
-                    <Github width={30} height={30} />
-                </Git>
+                
             </Footer>
         </Box>
     </div>

@@ -3,12 +3,14 @@ import styled, { ThemeProvider } from "styled-components";
 import { Dark } from "./DarkMood";
 import {YinYang} from './Svgs'
 import {motion} from 'framer-motion'
+import ReactCanvasNest from 'react-canvas-nest';
 import Logo from "../SubCompanents/Logo";
 import Button from "../SubCompanents/Button";
 import Social from "../SubCompanents/Social";
 import SingleProject from "./SingleProject";
 import Title from '../SubCompanents/Title'
-
+import {WorkData} from '../data/WorkData'
+import nextId from "react-id-generator";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
@@ -51,7 +53,8 @@ const container = {
 
 
 
-const Projects = () => {
+const Projects = (theme) => {
+console.log(theme)
 const ref = useRef(null);
 const yinyang = useRef(null);
 
@@ -83,18 +86,19 @@ return (yinyang.current.style.transform =
         <Button />
         <Logo theme="dark" />
         <Social theme="dark" />
+        <ReactCanvasNest className = 'canvasNest' config = {{ pointColor: ' 255, 255, 255 ' }} style = {{ zIndex: 0}} />
 <Main ref={ref} variants={container} initial='hidden' animate='show'>
-<SingleProject/>
-<SingleProject/>
-<SingleProject/>
-<SingleProject/>
-<SingleProject/>
-<SingleProject/>
+  {WorkData.map(item=>{
+    return(
+      <SingleProject  id = {nextId()} {...item}/>
+    )
+  })}
+
+
 </Main>
 <Rotate ref={yinyang}>
     <YinYang width={80} height={80} fill={Dark.text} />
 </Rotate>
-
 <Title text="Projects" top='10%' right="20%" />
       </Box>
     </ThemeProvider>

@@ -17,6 +17,7 @@ z-index:1;
 `
 
 const Logo = (props) => {
+
   return (
     <Link to ='/'>
       <LogoStyle color={props.theme}>Aydan</LogoStyle>

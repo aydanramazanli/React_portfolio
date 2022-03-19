@@ -181,7 +181,7 @@ const Main = () => {
             Blog
           </motion.h3>
         </Blog>
-        <Projects  to='/projects'  click={click}>
+        <Projects  to='/projects'  click={click}  theme ={click? 'dark' : 'light'}>
           <motion.h3  style={{fontWeight:"bold"}} 
           initial={{
             x: -200,
