@@ -28,7 +28,6 @@ z-index:3;
 
 `;
 const Image = styled.div`
-  background: url(${example});
   width: 100%;
   height: 60%;
   background-size: cover;
@@ -40,6 +39,10 @@ const Image = styled.div`
     border: 1px solid ${(props) => props.theme.body};
   }
 `;
+
+const Img = styled.img`
+
+`
 const Title = styled.h2`
   color: inherit;
   padding: 0.5rem 0;
@@ -67,21 +70,20 @@ const Item = {
 };
 
 
-const SingleBlog = (props) => {
+const SingleBlog = ({title,guid,pubDate,thumbnail}) => {
   
-
-  //api name tags date img link=blog
   return (
     
-    <Single to="/" target="_blank" variants={Item}>
-      <Image />
+    <Single to={guid} target="_blank" variants={Item}>
+      <Image >
+        <Img src={thumbnail ?? example}/>
+      </Image>
 
       <Title>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-        tenetur possimus magni.
+       {title}
       </Title>
 
-      <Date>03.03.2022</Date>
+      <Date>{pubDate}</Date>
     </Single>
   );
 };

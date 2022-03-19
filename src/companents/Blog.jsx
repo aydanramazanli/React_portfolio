@@ -1,14 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import Button from "../SubCompanents/Button";
 import Logo from "../SubCompanents/Logo";
-import axios from 'axios'
+import axios from "axios";
 import Social from "../SubCompanents/Social";
 import SingleBlog from "./SingleBlog";
 import BlogImg from "../assets/Images/blog.jpg";
 import { motion } from "framer-motion";
 import nextId from "react-id-generator";
-
 
 //Blog Container
 const BlogContainer = styled(motion.div)`
@@ -52,17 +51,19 @@ const container = {
   },
 };
 
-
 const Blog = () => {
-  const [datas, setDatas]=useState()
+  const [datas, setDatas] = useState([]);
 
   useEffect(() => {
-      axios(
-        "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@aydan2903"
-      )
-        .then((res) => res.data)
-        .then((c) => setDatas(c.items));
-    }, [datas]);
+    fetch(
+      "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@aydan2903"
+    )
+      .then((data) => data.json())
+      .then((item) => setDatas(item.items));
+  }, []);
+
+  console.log(datas)
+
 
 
   return (
@@ -79,13 +80,15 @@ const Blog = () => {
 
         <Center>
           <Grid>
-          
-            {datas.map((a)=>{ 
-              return(
-                <SingleBlog id= {nextId()} />           
-              )
-            })}
-           {/* <SingleBlog/> */}
+          {datas!==null? 
+ datas.map((e) =>{
+  return(
+    <SingleBlog {...e} key ={nextId()} />
+    )
+ }
+)
+ :"bezdim ee"} 
+           
           </Grid>
         </Center>
       </Container>
