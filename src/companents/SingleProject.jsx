@@ -101,7 +101,7 @@ const SingleProject = () => {
             </Description>
           
             <Footer>
-                <Links >
+                <Links to='/'>
                     Visit
                 </Links>
                 <Git >

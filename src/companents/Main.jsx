@@ -79,15 +79,9 @@ width:100%;
 display:flex;
 justify-content: space-evenly;
 `
+
 //About
-const About = styled(Link)`
-color: ${props=>props.click ? props.theme.body: props.theme.text};
-text-decoration: none;
-z-index: 1;
-font-weight:700;
-`
-//Skills
-const Skills= styled(Link)`
+const About= styled(Link)`
 color: ${props=>props.theme.text};
 text-decoration: none;
 z-index: 1;
@@ -110,7 +104,6 @@ left:${props=>props.click? '90%' : '50%'};
 transform:translate(-50%, -50%);
 border:none;
 outline:none;
-background-color:transparent;
 transition:all 2s ease;
 display: flex;
 flex-direction:column;
@@ -122,10 +115,7 @@ z-index: 10;
   animation:${rotate} infinite 1.5s linear;
 }
 
-&>:last-child{
-  display:${props=>props.click? 'none' : 'block'};
-  padding-top:1rem;
-}
+
 `
 
 // main dark side
@@ -148,6 +138,7 @@ const Main = () => {
   const clickButton=()=>{
     setClick(!click)
   }
+  
   return (
     <MainContainer>
        <DarkMood click={click}/>
@@ -159,7 +150,6 @@ const Main = () => {
     
         <Center click={click}>
            <YinYang onClick={()=>clickButton()} width={click? 150 : 200}  height={click? 150 :200} fill='currentColor'/> 
-    
         </Center>
         <Contact target="_blank" to={{pathname:"mailto:aydansamedva@gmail.com"}}>
           <motion.h3 style={{fontWeight:"bold"}}
@@ -206,19 +196,8 @@ const Main = () => {
           </motion.h3>
         </Projects>
         <BottomBar >
-          <About to='/about' click={click}>
-          <motion.h3  style={{fontWeight:"bold"}} initial={{
-              y: 200,
-              transition :{type:'spring', duration:1.5, delay:1}
-            }}
-            animate={{
-              y: 0,
-              transition :{type:'spring', duration:1.5, delay:1}
-            }} whileHover={{scale:1.3}} whileTap={{ rotate: 90, scale: 0.75 }}>
-           About.
-          </motion.h3>
-          </About>
-          <Skills to='/skills'>
+        
+          <About to='/about'>
           <motion.h3 style={{fontWeight:"bold"}}  initial={{
               x: -200,
               transition :{type:'spring', duration:1.5, delay:1}
@@ -227,9 +206,9 @@ const Main = () => {
               x: 0,
               transition :{type:'spring', duration:1.5, delay:1}
             }} whileHover={{scale:1.3}}  whileTap={{ rotate: 90, scale: 0.75 }}>
-          My Skills.
+         About.
           </motion.h3>
-          </Skills>
+          </About>
         
         </BottomBar>
       </Container>

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import Button from "../SubCompanents/Button";
 import Logo from "../SubCompanents/Logo";
-import axios from "axios";
 import Social from "../SubCompanents/Social";
 import SingleBlog from "./SingleBlog";
 import BlogImg from "../assets/Images/blog.jpg";

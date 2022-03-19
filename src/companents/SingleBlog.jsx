@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import example from "../assets/Images/blog.jpg";
+import example from "../assets/Images/images.jpg";
 
 
 const Single = styled(motion(Link))`
 width: calc(10rem + 15 wv);
 text-decoration: none;
-height: 20rem;
+height: 17rem;
 padding:1rem;
 border: 2px solid ${(props) => props.theme.text};
 backdrop-filter:blur(2px);
@@ -41,20 +41,20 @@ const Image = styled.div`
 `;
 
 const Img = styled.img`
-
+object-fit: cover;
+    height: 100%;
+    width: 100%;
 `
 const Title = styled.h2`
   color: inherit;
   padding: 0.5rem 0;
-  padding-top: 1rem;
+  padding: 1rem 0;
   font-family: "" sans-serif;
   font-weight: bold;
   cursor: pointer;
   border-bottom: 1px solid grey;
 `;
 const Date = styled.span`
-  padding-right: 0.5rem;
-  margin-bottom: 0.5rem;
 `;
 const Item = {
   hidden: {
@@ -74,15 +74,15 @@ const SingleBlog = ({title,guid,pubDate,thumbnail}) => {
   
   return (
     
-    <Single to={guid} target="_blank" variants={Item}>
+    <Single to={{pathname:guid}} target="_blank" variants={Item}>
       <Image >
-        <Img src={thumbnail ?? example}/>
+        <Img 
+        src={thumbnail ||example} />
       </Image>
-
       <Title>
        {title}
-      </Title>
-
+      </Title> 
+      <br/>
       <Date>{pubDate}</Date>
     </Single>
   );

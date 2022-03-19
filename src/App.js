@@ -7,14 +7,13 @@ import {AnimatePresence} from 'framer-motion'
 import Global from './GlobalStyle';
 //companents
 import Main from './companents/Main'
-import About from './companents/About'
 import Blog from './companents/Blog'
-import Skills from './companents/Skills'
+import About from './companents/About'
 import Projects from './companents/Projects'
 
 
 function App() {
-  const Location=useLocation()
+  const location=useLocation()
   return (
     <>
     <Global/>
@@ -29,11 +28,9 @@ function App() {
        <Route path="/blog">
          <Blog/>
        </Route>
+     
        <Route path="/about">
          <About/>
-       </Route>
-       <Route path="/skills">
-         <Skills/>
        </Route>
        <Route path="/projects">
          <Projects/>
