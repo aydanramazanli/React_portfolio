@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import breakpoints from 'styled-components-breakpoints'
+
+import ReactCanvasNest from 'react-canvas-nest';
 import Button from "../SubCompanents/Button";
 import Logo from "../SubCompanents/Logo";
 import Social from "../SubCompanents/Social";
 import SingleBlog from "./SingleBlog";
-import BlogImg from "../assets/Images/blog.jpg";
 import { motion } from "framer-motion";
 import nextId from "react-id-generator";
 import Loading from "../SubCompanents/Loading";
@@ -14,7 +14,7 @@ import Loading from "../SubCompanents/Loading";
 
 //Blog Container
 const BlogContainer = styled(motion.div)`
-  background-image: url(${BlogImg});
+background-color: ${(props) => props.theme.body};
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -86,6 +86,8 @@ const Blog = () => {
     {
       isLoading ? 
       (
+        <>
+        <ReactCanvasNest className = 'canvasNest' config = {{ pointColor: ' 255, 255, 255' }} style = {{ zIndex: -1 }} />
 <BlogContainer
       variants={container}
       initial="hidden"
@@ -112,6 +114,7 @@ const Blog = () => {
         </Container>
       
     </BlogContainer>
+    </>
     ): <Loading/>
      
           }
