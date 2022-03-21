@@ -23,6 +23,10 @@ const Box = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  @media (max-width: 900px) {
+    align-items:center;justify-content:center;
+   flex-direction: column;
+   };
 `;
 const Main = styled(motion.div)`
   border: 2px solid ${(props) => props.theme.body};
@@ -44,6 +48,11 @@ const Main = styled(motion.div)`
     background-color: ${(props) => props.theme.body};
     transition: all 0.4s ease;
   }
+  @media (max-width: 900px) {
+    height: 30vh;
+    padding:1rem;
+    };
+  
 `;
 const SubTitle = styled.h2`
   display: flex;
@@ -59,7 +68,12 @@ const SubTitle = styled.h2`
   }
   & > *:first-child {
     margin-right: 1rem;
+   
   }
+  @media (max-width: 900px) {
+    font-size: calc(0.5em + 1vw);
+
+    };
 `;
 const Description = styled.h3`
   color: ${(props) => props.theme.body};
@@ -81,6 +95,10 @@ const Description = styled.h3`
 
   p {
     margin-left: 2rem;
+    @media (max-width: 900px) {
+      margin:0;
+    
+        };
   }
 `;
 
@@ -105,6 +123,10 @@ const MainCV = styled(motion.div)`
     background-color: ${(props) => props.theme.body};
     transition: all 0.4s ease;
   }
+  @media (max-width: 900px) {
+   display:none;
+  
+      };
 `;
 const Image = styled.img`
 width:100%;

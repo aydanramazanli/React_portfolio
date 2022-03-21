@@ -25,6 +25,10 @@ background-color: ${props => props.theme.body};
 color:${props => props.theme.text};
 border: 1px solid ${props => props.theme.text};
 }
+
+@media (max-width: 900px) {
+    height: 30vh;
+   };
 `
 const Title = styled.h2`
 font-size: calc(1em + 0.5vw);

@@ -6,7 +6,7 @@ import {HomeButton} from '../companents/Svgs'
 
 const MainButton = styled.button`
 position:fixed;
-top:2rem;
+top:2.5rem;
 left:50%;
 transform:translate(-50%, 0%);
 

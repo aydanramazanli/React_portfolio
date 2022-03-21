@@ -7,7 +7,7 @@ const Box = styled.div`
 display:flex;
 cursor:pointer;
 position:fixed;
-left:10rem;
+left:8rem;
 top:3.5rem;
 z-index:10;
 &>*:nth-child(1){
@@ -37,6 +37,7 @@ const play = keyframes`
 100%{
     transform:scaleY(1);
 }
+
 `
 
 

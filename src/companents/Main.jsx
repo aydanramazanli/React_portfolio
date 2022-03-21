@@ -39,7 +39,7 @@ const Container = styled.div`
 const Contact = styled(Link)`
 color: ${props=>props.theme.text};
 position: absolute;
-top: 2rem;
+top: 3rem;
 right: calc(1rem + 2vw);
 text-decoration: none;
 font-weight:bold;

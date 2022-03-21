@@ -53,6 +53,9 @@ const Title = styled.h2`
   font-weight: bold;
   cursor: pointer;
   border-bottom: 1px solid grey;
+  @media (max-width: 900px) {
+  font-size:10px;
+   };
 `;
 const Date = styled.span`
 `;

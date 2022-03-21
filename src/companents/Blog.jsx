@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import breakpoints from 'styled-components-breakpoints'
 import Button from "../SubCompanents/Button";
 import Logo from "../SubCompanents/Logo";
 import Social from "../SubCompanents/Social";
@@ -10,6 +11,7 @@ import nextId from "react-id-generator";
 import Loading from "../SubCompanents/Loading";
 
 
+
 //Blog Container
 const BlogContainer = styled(motion.div)`
   background-image: url(${BlogImg});
@@ -17,6 +19,7 @@ const BlogContainer = styled(motion.div)`
   background-repeat: no-repeat;
   background-attachment: fixed;
   height:auto;
+  width:100%;
   background-position: center;
 `;
 
@@ -43,6 +46,11 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
   grid-gap: calc(1rem + 2vw);
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(1, minmax(calc(10rem + 40vw), 1fr));
+    margin-top:1rem;
+   };
 `;
 const container = {
   hidden: { opacity: 0 },
