@@ -53,8 +53,7 @@ const container = {
 
 
 
-const Projects = (theme) => {
-console.log(theme)
+const Projects = () => {
 const ref = useRef(null);
 const yinyang = useRef(null);
 
@@ -90,7 +89,7 @@ return (yinyang.current.style.transform =
 <Main ref={ref} variants={container} initial='hidden' animate='show'>
   {WorkData.map(item=>{
     return(
-      <SingleProject  id = {nextId()} {...item}/>
+      <SingleProject  key= {nextId()} {...item}/>
     )
   })}
 

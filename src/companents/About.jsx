@@ -120,14 +120,13 @@ const container = {
 };
 
 const About = () => {
-
   return (
     <ThemeProvider theme={Light}>
       <Box>
         <Logo theme="dark" />
         <Social theme="dark" />
         <Button />
-        <ReactCanvasNest className = 'canvasNest' config = {{ pointColor: ' 128, 128, 128 ' }} style = {{ zIndex: 1, backgroundColor:"darkgray"}} />
+        <ReactCanvasNest className = 'canvasNest' config = {{ pointColor: ' 128, 128, 128 ' }} style = {{ zIndex: 1, backgroundColor:"darkgrey"}} />
         <Main
           variants={container}
           initial="hidden"

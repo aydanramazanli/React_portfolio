@@ -11,6 +11,7 @@ import {YinYang} from './Svgs'
 
 
 
+
 //Main Container
 const MainContainer = styled.div`
   background:  ${props=>props.theme.body};
@@ -143,6 +144,7 @@ const Main = () => {
     <MainContainer>
        <DarkMood click={click}/>
       <Container>
+    
         <Button/>
         <Sound theme ={click? 'dark' : 'light'} />
         <Logo theme ={click? 'dark' : 'light'}/>
@@ -181,7 +183,7 @@ const Main = () => {
             Blog
           </motion.h3>
         </Blog>
-        <Projects  to='/projects'  click={click}  theme ={click? 'dark' : 'light'}>
+        <Projects  to='/projects'  click={click} >
           <motion.h3  style={{fontWeight:"bold"}} 
           initial={{
             x: -200,

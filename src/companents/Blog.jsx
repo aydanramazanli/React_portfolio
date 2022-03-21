@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Button from "../SubCompanents/Button";
 import Logo from "../SubCompanents/Logo";
@@ -7,6 +7,8 @@ import SingleBlog from "./SingleBlog";
 import BlogImg from "../assets/Images/blog.jpg";
 import { motion } from "framer-motion";
 import nextId from "react-id-generator";
+import Loading from "../SubCompanents/Loading";
+
 
 //Blog Container
 const BlogContainer = styled(motion.div)`
@@ -14,6 +16,7 @@ const BlogContainer = styled(motion.div)`
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  height:auto;
   background-position: center;
 `;
 
@@ -21,7 +24,8 @@ const BlogContainer = styled(motion.div)`
 const Container = styled.div`
   background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.8)`};
   width: 100%;
-  height: auto;
+
+   height:auto;
   position: relative;
 `;
 
@@ -29,6 +33,7 @@ const Container = styled.div`
 
 const Center = styled.div`
   display: flex;
+
   justify-content: center;
   align-items: center;
   padding: 5rem 13rem;
@@ -52,47 +57,58 @@ const container = {
 
 const Blog = () => {
   const [datas, setDatas] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  
 
   useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(true);
+    },1500)
     fetch(
       "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@aydan2903"
     )
       .then((data) => data.json())
       .then((item) => setDatas(item.items));
+   
+
   }, []);
 
-  console.log(datas)
-
-
-
   return (
-    <BlogContainer
+    <>
+    {
+      isLoading ? 
+      (
+<BlogContainer
       variants={container}
       initial="hidden"
       animate="show"
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
     >
-      <Container>
-        <Logo />
-        <Social />
-        <Button />
+     
+        <Container>
+          <Logo />
+          <Social />
+          <Button />
 
-        <Center>
-          <Grid>
-          {datas!==null? 
- datas.map((e) =>{
-  return(
-    <SingleBlog {...e} key ={nextId()} />
-    )
- }
-)
- :"bezdim ee"} 
-           
-          </Grid>
-        </Center>
-      </Container>
+    <Center>
+    <Grid>
+     {  datas.map((e) => {
+            return <SingleBlog {...e} key={nextId()} />;
+          })
+       }
+    </Grid>
+  </Center>
+   
+ 
+        
+        </Container>
+      
     </BlogContainer>
-  );
+    ): <Loading/>
+     
+          }
+
+ </> );
 };
 
 export default Blog;

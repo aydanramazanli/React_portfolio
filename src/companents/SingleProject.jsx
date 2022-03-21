@@ -2,8 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Github } from '../companents/Svgs'
-import { Dark } from "../companents/DarkMood";
+
 
 
 
