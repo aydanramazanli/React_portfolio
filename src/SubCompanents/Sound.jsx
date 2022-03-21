@@ -25,6 +25,9 @@ z-index:10;
 &>*:nth-child(5){
     animation-delay: 0.8s;
 }
+@media (max-width: 900px) {
+    display:none;
+   };
 `
 
 const play = keyframes`

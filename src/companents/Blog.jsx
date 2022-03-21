@@ -48,7 +48,7 @@ const Grid = styled.div`
   grid-gap: calc(1rem + 2vw);
 
   @media (max-width: 900px) {
-    grid-template-columns: repeat(1, minmax(calc(10rem + 40vw), 1fr));
+    grid-template-columns: repeat(1, minmax(calc(10rem + 30vw), 1fr));
     margin-top:1rem;
    };
 `;
