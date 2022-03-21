@@ -11,7 +11,7 @@ width: calc(10rem + 15 wv);
 text-decoration: none;
 height: 17rem;
 padding:1rem;
-border-radius:5%;
+border-radius:2%;
 border: 2px solid ${(props) => props.theme.text};
 backdrop-filter:blur(2px);
 box-shadow:0 0 1rem 0 rgba(0,0,0,0.2)

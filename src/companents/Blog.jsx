@@ -14,7 +14,7 @@ import Loading from "../SubCompanents/Loading";
 
 //Blog Container
 const BlogContainer = styled(motion.div)`
-background-color: ${(props) => props.theme.body};
+    background-color: ${(props) => props.theme.body};
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -87,7 +87,7 @@ const Blog = () => {
       isLoading ? 
       (
         <>
-        <ReactCanvasNest className = 'canvasNest' config = {{ pointColor: ' 255, 255, 255' }} style = {{ zIndex: -1 }} />
+        <ReactCanvasNest className = 'canvasNest' config = {{ pointColor: ' 128, 128, 128 ' }} style = {{ zIndex: 1, backgroundColor:"#C0C0C0"}} />
 <BlogContainer
       variants={container}
       initial="hidden"
