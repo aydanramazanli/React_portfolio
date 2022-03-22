@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
 import ReactCanvasNest from 'react-canvas-nest';
 import Button from "../SubCompanents/Button";
 import Logo from "../SubCompanents/Logo";
@@ -86,8 +85,8 @@ const Blog = () => {
     {
       isLoading ? 
       (
-        <>
-        <ReactCanvasNest className = 'canvasNest' config = {{ pointColor: ' 128, 128, 128 ' }} style = {{ zIndex: 1, backgroundColor:"#C0C0C0"}} />
+        
+      
 <BlogContainer
       variants={container}
       initial="hidden"
@@ -99,7 +98,7 @@ const Blog = () => {
           <Logo />
           <Social />
           <Button />
-
+          <ReactCanvasNest className = 'canvasNest' config = {{ pointColor: ' 128, 128, 128 ' }} style = {{ zIndex: 1, backgroundColor:"darkgrey"}} />
     <Center>
     <Grid>
      {  datas.map((e) => {
@@ -114,7 +113,7 @@ const Blog = () => {
         </Container>
       
     </BlogContainer>
-    </>
+    
     ): <Loading/>
      
           }
