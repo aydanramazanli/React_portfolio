@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import styled, { ThemeProvider } from "styled-components";
 import ReactCanvasNest from 'react-canvas-nest';
 import Social from "../SubCompanents/Social";
@@ -9,6 +9,7 @@ import Title from "../SubCompanents/Title";
 import { Light } from "./DarkMood";
 import { Develope} from "./Svgs";
 import cv from '../assets/Images/Screenshot_1.png'
+
 
 
 
@@ -28,6 +29,7 @@ const Box = styled.div`
    flex-direction: column;
    };
 `;
+
 const Main = styled(motion.div)`
   border: 2px solid ${(props) => props.theme.body};
   color: ${(props) => props.theme.body};
@@ -53,6 +55,7 @@ const Main = styled(motion.div)`
     height: auto;
     padding: 1rem;
     margin-bottom:2rem;
+    margin-top:2rem;
     };
   
 `;
@@ -117,14 +120,15 @@ const MainCV = styled(motion.div)`
   line-height: 1.5;
   display: flex;
   flex-direction: column;
-
   cursor: pointer;
 
   &:hover {
     color: ${(props) => props.theme.text};
     background-color: ${(props) => props.theme.body};
     transition: all 0.4s ease;
+ 
   }
+
   @media (max-width: 900px) {
 
   height:40%;
@@ -146,6 +150,9 @@ const container = {
 };
 
 const About = () => {
+
+  
+
   return (
     <ThemeProvider theme={Light}>
       <Box>
@@ -183,9 +190,12 @@ const About = () => {
           initial="hidden"
           animate="show"
           transition={{ type: "spring", duration: 1, delay: 1.4 }}
+        
         >
+           
+     
        
-        <Image src={cv}/>
+         <Image src={cv}/> 
       
         </MainCV>
         
