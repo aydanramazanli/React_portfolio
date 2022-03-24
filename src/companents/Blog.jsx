@@ -43,12 +43,14 @@ const Center = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
+  padding-top:3rem;
+  grid-template-columns: repeat(3, minmax(calc(10rem + 15vw), 1fr));
   grid-gap: calc(1rem + 2vw);
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(1, minmax(calc(10rem + 30vw), 1fr));
     margin-top:1rem;
+    padding:0;
    };
 `;
 const container = {
@@ -98,7 +100,7 @@ const Blog = () => {
           <Logo />
           <Social />
           <Button />
-          <ReactCanvasNest className = 'canvasNest' config = {{ pointColor: ' 128, 128, 128 ' }} style = {{ zIndex: 1, backgroundColor:"darkgrey"}} />
+          <ReactCanvasNest className = 'canvasNest' config = {{ pointColor: ' 128, 128, 128 ' }} style = {{ zIndex: 1, backgroundColor:"#E8E8E8",width:"100%"}} />
     <Center>
     <Grid>
      {  datas.map((e) => {

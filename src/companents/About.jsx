@@ -49,8 +49,10 @@ const Main = styled(motion.div)`
     transition: all 0.4s ease;
   }
   @media (max-width: 900px) {
-    height: 30vh;
-    padding:1rem;
+    width: 65%;
+    height: auto;
+    padding: 1rem;
+    margin-bottom:2rem;
     };
   
 `;
@@ -71,13 +73,13 @@ const SubTitle = styled.h2`
    
   }
   @media (max-width: 900px) {
-    font-size: calc(0.5em + 1vw);
+    font-size: calc(0.8em + 1vw);
 
     };
 `;
 const Description = styled.h3`
   color: ${(props) => props.theme.body};
-  font-size: calc(0.3em + 1vw);
+  font-size: calc(0.5em + 1vw);
   padding: 0.5rem 0;
   text-align: center;
 
@@ -124,8 +126,10 @@ const MainCV = styled(motion.div)`
     transition: all 0.4s ease;
   }
   @media (max-width: 900px) {
-   display:none;
-  
+
+  height:40%;
+  width:65%;
+  padding:1rem;
       };
 `;
 const Image = styled.img`

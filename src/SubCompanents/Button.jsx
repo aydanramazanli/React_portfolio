@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {Link} from 'react-router-dom'
-import {HomeButton} from '../companents/Svgs'
+import {Home} from '../companents/Svgs'
 
 
 const MainButton = styled.button`
@@ -32,7 +32,7 @@ const Button = () => {
   return (
     <MainButton>
       <Link to='/'>
-      <HomeButton width={30} height={30} fill='curretColor'/>
+      <Home width={30} height={30} fill='curretColor'/>
       </Link>
     </MainButton>
   );

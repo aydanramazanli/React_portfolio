@@ -12,7 +12,7 @@ position:fixed;
 left:2rem;
 font-size:2rem;
 top:2rem;
-z-index:1;
+z-index:100;
 
 `
 

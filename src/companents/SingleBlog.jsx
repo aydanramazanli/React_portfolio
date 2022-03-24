@@ -7,9 +7,9 @@ import example from "../assets/Images/images.jpg";
 
 
 const Single = styled(motion(Link))`
-width: calc(10rem + 15 wv);
+width: 96%;
 text-decoration: none;
-height: 17rem;
+height: 18rem;
 padding:1rem;
 border-radius:2%;
 border: 2px solid ${(props) => props.theme.text};
@@ -54,6 +54,7 @@ const Title = styled.h2`
   font-weight: bold;
   cursor: pointer;
   border-bottom: 1px solid grey;
+  font-size:14px;
   @media (max-width: 900px) {
   font-size:10px;
    };
