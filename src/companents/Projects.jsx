@@ -15,9 +15,9 @@ import nextId from "react-id-generator";
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
-  height: 400vh;
+  height: 550vh;
   position: relative;
-  overflow: hidden;
+  overflow-y: scroll;
 `;
 
 const Main = styled(motion.ul)`
