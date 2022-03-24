@@ -83,11 +83,18 @@ justify-content: space-evenly;
 
 //About
 const About= styled(Link)`
-color: ${props=>props.theme.text};
 text-decoration: none;
 z-index: 1;
 font-weight:700;
+
 `
+const Ab = styled.h3`
+color: ${props=>props.click ? props.theme.body: props.theme.text};
+`
+
+
+ 
+
 //animate ying yang
 const rotate=keyframes`
 from{
@@ -208,7 +215,9 @@ const Main = () => {
               x: 0,
               transition :{type:'spring', duration:1.5, delay:1}
             }} whileHover={{scale:1.3}}  whileTap={{ rotate: 90, scale: 0.75 }}>
-         About.
+              <Ab click={click} style={{fontWeight:"bold"}}>Ab</Ab>
+              <span>out</span>
+            
           </motion.h3>
           </About>
         
