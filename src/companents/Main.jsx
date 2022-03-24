@@ -29,12 +29,10 @@ const MainContainer = styled.div`
     font-weight: 400;
   }
 `;
-
 //Container
 const Container = styled.div`
   padding: 2rem;
 `;
-
 //Contact
 const Contact = styled(Link)`
 color: ${props=>props.theme.text};
@@ -69,7 +67,6 @@ transform:rotate(-90deg);
 text-decoration: none;
 z-index: 1;
 `
-
 //Bottom Bar
 const BottomBar = styled(Link)`
 position: absolute;
@@ -80,7 +77,6 @@ width:100%;
 display:flex;
 justify-content: space-evenly;
 `
-
 //About
 const About= styled(Link)`
 text-decoration: none;
@@ -91,10 +87,6 @@ font-weight:700;
 const Ab = styled.h3`
 color: ${props=>props.click ? props.theme.body: props.theme.text};
 `
-
-
- 
-
 //animate ying yang
 const rotate=keyframes`
 from{
@@ -125,7 +117,6 @@ z-index: 10;
 
 
 `
-
 // main dark side
 const DarkMood = styled.div`
 position:absolute;
@@ -142,6 +133,7 @@ z-index: 1;
 
 const Main = () => {
   const [click,setClick] =useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   const clickButton=()=>{
     setClick(!click)

@@ -8,11 +8,11 @@ import styled from 'styled-components';
 
 const Box = styled(motion.li)`
 width: 18rem;
-height: 50vh;
+height: 45vh;
 background-color: ${props => props.theme.text};
 color:${props => props.theme.body};
 padding: 1.5rem 2rem;
-margin-right: 8rem;
+margin-right: 5rem;
 border-radius: 0 50px 0 50px;
 display: flex;
 flex-direction: column;
@@ -27,7 +27,7 @@ border: 1px solid ${props => props.theme.text};
 }
 
 @media (max-width: 900px) {
-    height: 30vh;
+    height: 35vh;
    };
 `
 const Title = styled.h2`

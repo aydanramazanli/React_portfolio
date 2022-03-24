@@ -15,7 +15,7 @@ import nextId from "react-id-generator";
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
-  height: 550vh;
+  height: 500vh;
   position: relative;
   overflow-y: scroll;
 `;
