@@ -7,28 +7,29 @@ export const WorkData = [
     },
     {
      
+        name:"FlixGo MovieDb",
+        description:"React, React Hooks, Redux, Actions, UseContext, data with api from TheMovieDB, axios, Scss,LazyLoading.",
+        github:"https://github.com/aydansamedova/moviedb-react"
+    },
+    {
+     
         name:"Searching Github Users",
         description:" React, React Hooks, TailwindCss, data with api, Fusion Charts, Auth0.",
         github:"https://mygithubusers01.netlify.app/"
         
     },
-    {
-     
-        name:"Netflix Clone",
-        description:"React, React Hooks, SDK, data with api from TheMovieDB, TailwindCss.",
-        github:"https://github.com/aydansamedova/React-Projects/tree/main/netflix"
-    },
+   
     {
    
-        name:"Mini Chat",
-        description:"React, Redux toolKit.",
-        github:"https://github.com/aydansamedova/React-Projects/tree/main/MiniChat"
+        name:"Youtube Clone",
+        description:"React, Redux, redux-actions, scss, responsive design, skeletons, working with api, firebase.",
+        github:"https://github.com/aydansamedova/youtube-clone"
        
     },{
      
-        name:"Mini React Project Folder",
-        description:"Birthday Reminder, Tours, Reviews,Accordion.",
-        github:"https://github.com/aydansamedova/BasicReactProjects"
+        name:"E-commerce UI ",
+        description:"React, TailwindCss, react-dom, axios, react-icons, UseContext.",
+        github:"https://github.com/aydansamedova/e-commerce"
         
     },
     {
