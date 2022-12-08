@@ -42,7 +42,7 @@ export const WorkData = [
     {
      
         name:"Vanilla Javascript folder",
-        description:"Slier, Reviews, Sidebar, Tabs, To do app,  Grocery List, Questions etc.",
+        description:"Slider, Reviews, Sidebar, Tabs, To do app,  Grocery List, Questions etc.",
         github:"https://github.com/aydansamedova/javascriptMiniProjects"
         
     },
