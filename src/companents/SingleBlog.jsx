@@ -22,7 +22,7 @@ z-index:3;
 
 &:hover{
     color: ${(props) => props.theme.body};
-    background:${(props) => props.theme.text};
+    background:rgba(0,0,0,0.2);
     transition:all 0.6s ease;
 }
 

@@ -1,4 +1,4 @@
-import React  from "react";
+import {useState} from "react";
 import styled, { ThemeProvider } from "styled-components";
 import ReactCanvasNest from 'react-canvas-nest';
 import Social from "../SubCompanents/Social";
@@ -8,11 +8,17 @@ import Logo from "../SubCompanents/Logo";
 import Title from "../SubCompanents/Title";
 import { Light } from "./DarkMood";
 import { Develope} from "./Svgs";
-import cv from '../assets/Images/Screenshot_1.png'
+import cv from '../assets/documents/Aydan Ramazanli.pdf';
+import cvscreen from '../assets/Images/cvscreen.png';
 
 
 
 
+const options = {
+  cMapUrl: 'cmaps/',
+  cMapPacked: true,
+  standardFontDataUrl: 'standard_fonts/',
+};
 
 const Box = styled.div`
   background: ${(props) => props.theme.text};
@@ -151,8 +157,12 @@ const container = {
 
 const About = () => {
 
-  
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
 
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+  }
   return (
     <ThemeProvider theme={Light}>
       <Box>
@@ -192,11 +202,14 @@ const About = () => {
           transition={{ type: "spring", duration: 1, delay: 1.4 }}
         
         >
-           
-     
-       
-         <Image src={cv}/> 
+    <div >
       
+      <a href = {cv} target = "_blank">
+      <img src={cvscreen} alt= 'cv' />
+      </a>
+    </div>
+
+    
         </MainCV>
         
       </Box>

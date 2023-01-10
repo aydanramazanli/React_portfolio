@@ -55,7 +55,7 @@ const Intro = () => {
   return (
     <IntroBox 
     initial={{height:0}}
-    animate={{height:"42vh"}}
+    animate={{height:"55vh"}}
     transition={{ duration:1, delay:1}}
     
     >

@@ -34,7 +34,7 @@ const Social = (props) => {
         transition={{ type: "spring", duration: 1, delay: 1 }}
       >
         <Link
-          to={{ pathname: "https://github.com/aydansamedova" }}
+          to={{ pathname: "https://github.com/aydanramazanli" }}
           target="_blank"
         >
           <Github
@@ -52,7 +52,7 @@ const Social = (props) => {
       >
         <Link
           to={{
-            pathname: "https://www.linkedin.com/in/aydan-samedova-6a8628196/",
+            pathname: "https://www.linkedin.com/in/aydan-ramazanli-6a8628196/",
           }}
           target="_blank"
         >
